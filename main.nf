@@ -1,7 +1,7 @@
 nextflow.enable.dsl=2
 
-include { RUN_ALL_TOOLS } from './subworkflows/run_all_tools.nf'
-include { ASSESS_TOOLS  } from './subworkflows/assess_tools.nf'
+include { RUN_ALL_TOOLS    } from './subworkflows/run_all_tools.nf'
+include { ASSESS_TOOLS     } from './subworkflows/assess_tools.nf'
 include { RESOURCE_SUMMARY } from './modules/resource_summary/main.nf'
 
 workflow {

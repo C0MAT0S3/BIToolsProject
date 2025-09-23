@@ -1,17 +1,17 @@
 nextflow.enable.dsl=2
 
-include { RUN_BOWTIE2_DECONTAM } from '../modules/bowtie2/main.nf'
-include { BUILD_BOWTIE2_INDEX  } from '../modules/bowtie2/build.nf'
-include { RUN_BWA_DECONTAM      } from '../modules/bwa/main.nf'
-include { BUILD_BWA_INDEX       } from '../modules/bwa/build.nf'
-include { RUN_KRAKEN2_DECONTAM  } from '../modules/kraken2/main.nf'
-include { BUILD_KRAKEN2_DB      } from '../modules/kraken2/build.nf'
+include { RUN_BOWTIE2_DECONTAM    } from '../modules/bowtie2/main.nf'
+include { BUILD_BOWTIE2_INDEX     } from '../modules/bowtie2/build.nf'
+include { RUN_BWA_DECONTAM        } from '../modules/bwa/main.nf'
+include { BUILD_BWA_INDEX         } from '../modules/bwa/build.nf'
+include { RUN_KRAKEN2_DECONTAM    } from '../modules/kraken2/main.nf'
+include { BUILD_KRAKEN2_DB        } from '../modules/kraken2/build.nf'
 include { RUN_KRAKENUNIQ_DECONTAM } from '../modules/kraken_uniq/main.nf'
-include { BUILD_KRAKENUNIQ_DB   } from '../modules/kraken_uniq/build.nf'
-include { RUN_KNEADDATA_DECONTAM } from '../modules/kneaddata/main.nf'
-include { BUILD_KNEADDATA_DB     } from '../modules/kneaddata/build.nf'
-include { RUN_KMCP_DECONTAM      } from '../modules/kmcp/main.nf'
-include { BUILD_KMCP_DB          } from '../modules/kmcp/build.nf'
+include { BUILD_KRAKENUNIQ_DB     } from '../modules/kraken_uniq/build.nf'
+include { RUN_KNEADDATA_DECONTAM  } from '../modules/kneaddata/main.nf'
+include { BUILD_KNEADDATA_DB      } from '../modules/kneaddata/build.nf'
+include { RUN_KMCP_DECONTAM       } from '../modules/kmcp/main.nf'
+include { BUILD_KMCP_DB           } from '../modules/kmcp/build.nf'
 
 workflow RUN_ALL_TOOLS {
     take:
