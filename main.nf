@@ -61,5 +61,5 @@ workflow {
     )
 
     // Post-run summary
-    RESOURCE_SUMMARY("${params.output_dir ?: 'results'}/trace.tsv", metrics_out.metrics_tsv.map { true }.first())
+    RESOURCE_SUMMARY(file("${params.output_dir ?: 'results'}/trace.tsv"), metrics_out.metrics_tsv.map { true }.first())
 }

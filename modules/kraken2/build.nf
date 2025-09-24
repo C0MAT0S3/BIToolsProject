@@ -19,7 +19,6 @@ process BUILD_KRAKEN2_DB {
     set -euo pipefail
     mkdir -p kraken2_db/library kraken2_db/taxonomy
     cp -r ${taxonomy_dir}/* kraken2_db/taxonomy/
-    # ensure sequence IDs have taxid; add if missing
     awk -v tx=${taxid} '/^>/{sub(">","",\$1); print ">" \$1 "|kraken:taxid|" tx; next} {print}' ${ref_fasta} > kraken2_db/reference.tax.fasta
     kraken2-build --db kraken2_db --add-to-library kraken2_db/reference.tax.fasta --threads ${threads}
     kraken2-build --db kraken2_db --build --threads ${threads}
